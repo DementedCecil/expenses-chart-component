@@ -10,24 +10,30 @@
 
 </head>
 <body>
-
-  My balance
-  $921.48
-
-  Spending - Last 7 days
-
-  mon
-  tue
-  wed
-  thu
-  fri
-  sat
-  sun
-
-  Total this month
-  $478.33
-
-  +2.4%
-  from last month
+<main>
+  <section class="balance">
+    <div class="balance-text">
+      <p class="label">My balance</p>
+      <p class="balance-amount">$921.48</p>
+    </div>
+    <div class="logo"><svg width="72" height="48" viewBox="0 0 72 48" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><circle fill="#382314" cx="48" cy="24" r="24"/><circle stroke="#FFF" stroke-width="2" cx="24" cy="24" r="23"/></g></svg></div>
+  </section>
+  <section class="spending">
+    <div class="spending-title">Spending - Last 7 days</div>
+    <div class="table"></div>
+    <hr>
+    <div class="spending-summary">
+      <div class="spending-total">
+        <p class="label">Total this month</p>
+        <p class="spending-amount">$478.33</p>
+      </div>
+      <div class="percentage-text">
+        <p class="percentage">+2.4%</p>
+        <p class="label">from last month</p>
+      </div>
+    </div>
+  </section>
+</main>
+<script src="index.js"></script>
 </body>
 </html>
