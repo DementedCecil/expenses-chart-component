@@ -97,6 +97,7 @@ main section.spending .spending-summary .percentage-text .percentage {
   background-color: var(--color-primary-red);
   width: 42px;
   border-radius: 0.25rem;
+  position: relative;
 }
 .table .highest-bar {
   background-color: var(--color-primary-cyan);
@@ -105,6 +106,22 @@ main section.spending .spending-summary .percentage-text .percentage {
 .bars:hover, .bars:focus {
   cursor: pointer;
   opacity: 0.7;
+}
+
+.hidden {
+  display: none;
+}
+
+.amount {
+  position: absolute;
+  top: -35px;
+  left: -5%;
+  background-color: hsl(25deg, 49%, 7%);
+  color: var(--color-neutral-light);
+  font-size: 0.75rem;
+  border-radius: 0.25rem;
+  padding: 0.35rem;
+  text-align: center;
 }
 
 @media screen and (max-width: 400px) {
@@ -123,6 +140,9 @@ main section.spending .spending-summary .percentage-text .percentage {
   }
   main .table .highest-bar {
     background-color: var(--color-primary-cyan);
+  }
+  .amount {
+    left: -25%;
   }
 }
 

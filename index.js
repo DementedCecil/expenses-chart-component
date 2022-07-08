@@ -7,7 +7,6 @@ fetch('./data.json')
 function populate(data){
     let table = document.querySelector('.table');
     let max = Math.max(...data.map(o => o.amount));
-    let highest = document.querySelectorAll(`[value="${max}"]`);
 
     for (let i = 0; i < data.length; i++){
         let el = data[i];
@@ -20,15 +19,22 @@ function populate(data){
 
         table.innerHTML += `
             <div>
-                <div class="${bars}" style="height: ${height}px" value="${el.amount}"></div>
+                <div class="${bars}" style="height: ${height}px" value="${el.amount}">
+                    <div class="hidden amount">$${el.amount}</div>
+                </div>
                 <div class="label">${el.day}</div>
             </div>
         `
 
-        // document.querySelector('.bars').addEventListener('click', showAmount);
-        // function showAmount(){
-        //     console.log('hello')
-        // }
+        let columns = document.querySelectorAll('.bars')
+        columns.forEach(column => {
+            column.addEventListener('mouseover', () => {
+                column.firstElementChild.classList.remove('hidden');
+            });
+            column.addEventListener('mouseout', () => {
+                column.firstElementChild.classList.add('hidden');
+            });
+        });
     }
 }
 
